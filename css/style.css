@@ -1,0 +1,425 @@
+/*All Tabs*/
+
+body {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1 {
+    margin: 0 auto 20px;
+    text-align: center;
+}
+p > span {
+    color: #ee4041;
+}
+.box {
+    overflow: hidden;
+    background: #f6efe4 url(../images/bg.png) repeat;
+}
+
+/*导航条*/
+
+.navbar {
+    font-size: 14px;
+}
+
+.navbar-brand {
+    padding-left: 180px;
+}
+
+.navbar-brand img {
+    margin: -8px auto;
+}
+
+
+/*巨幕*/
+
+.jumbotron {
+    height: 540px;
+    margin: 0 auto;
+    background: url(../images/top.jpg) no-repeat center;
+    background-size: cover;
+}
+
+
+/*次导航栏*/
+
+.navigation {
+    height: 90px;
+    margin: 0 auto;
+    background: url(../images/navigation.png) no-repeat left;
+}
+
+.navigation ul {
+    height: 90px;
+}
+
+.navigation ul li {
+    display: inline-block;
+    height: 90px;
+}
+
+.navigation ul li a.dangqian {
+    color: #ee4041;
+}
+
+.navigation ul li a {
+    font-size: 24px;
+    line-height: 90px;
+    padding: 0 40px;
+    font-weight: bold;
+}
+
+.navigation ul li a:hover {
+    color: #ee4041;
+    text-decoration: underline;
+}
+
+
+/* main */
+
+.box >.container {
+    margin: 0 auto;
+}
+
+
+/*活动引言*/
+
+.yy p,
+.mt .mtdw,
+.px .pxwyh {
+    color: #444;
+    line-height: 48px;
+    padding: 0 3.75em;
+    text-indent: 2em;
+}
+
+.yy {
+    margin: 65px auto 0;
+}
+
+
+
+
+/*活动主题*/
+
+.zt .bt {
+    margin: 0 auto;
+}
+
+.zt .bt .bt_p {
+    font-size: 40px;
+    color: #000;
+    line-height: 62px;
+}
+
+.zt {
+    margin: 65px auto 0;
+    height: 300px;
+    background: url(../images/zt_bg.png) no-repeat center;
+}
+
+.zt .bt {
+    margin: 0 auto;
+}
+
+.zt .bt .bt_p {
+    font-size: 40px;
+    color: #000;
+    line-height: 62px;
+    text-align: center;
+}
+
+
+/*主办单位*/
+
+.zb {
+    height: 200px;
+    margin: 65px auto 0;
+}
+
+.zb p.hks {
+    font-size: 24px;
+    color: #222;
+    line-height: 45px;
+    text-align: center;
+}
+
+
+/* 支持单位 */
+
+.zc {
+    height: 400px;
+    margin: 65px auto 0;
+}
+
+.zc p.zcdw {
+    font-size: 24px;
+    color: #222;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+
+/*支持媒体*/
+
+.mt {
+    height: 500px;
+    margin: 65px auto 0;
+}
+
+.mt div>img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.px {
+    height: 300px;
+    margin: 65px auto 0;
+}
+
+
+h2{
+    width: 95px;
+    font-size:18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:#fff;
+    background:#ee4041;
+    line-height:24px;
+    padding:5px 5px 5px 10px;
+    border-radius: 2px;
+}
+
+.act-time{
+    margin:40px auto 0;
+}
+.act-time >.col-md-4{
+    width: 320px;
+    height: 230px;
+    margin: 0 5px;
+    background-image:url(../images/time_bg.png);
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 20px;
+    padding: 120px 60px;
+}
+.act-time_item-1{
+    background-position: left;
+}
+.act-time_item-2{
+    background-position: center;
+}
+.act-time_item-3{
+    background-position: right;
+}
+
+.addr{
+    margin:40px auto 0;
+}
+
+.container.main > div{
+    margin:40px auto 0;
+}
+.container.main > div p{
+    font-size:16px;
+    color:#444;
+    line-height:30px;
+    margin-bottom:20px;
+}
+
+.container.main > div p a{
+    color:#ee4041;
+}
+
+/*作品*/
+.wooks{
+    padding: 0;
+    margin: 0 auto;
+}
+.wooks li{
+    list-style:none;
+    display: inline-block; 
+    width:230px;
+    margin:10px 10px auto;
+    height:250px;
+}
+.wooks li a{
+    text-decoration:  none;
+}
+.zp h3{
+    font-size:16px;
+    font-weight:bold;
+    line-height: 1.5;
+    color:#222;
+}
+
+.zp p{
+    font-size:14px;
+    line-height:14px;
+    color:#444;
+}
+
+
+/*
+ * Footer
+ *
+ * Separated section of content at the bottom of all pages, save the homepage.
+ */
+
+.bs-docs-footer {
+  padding: 20px 0 5px;
+  margin-top: 100px;
+  color: #99979c;
+  text-align: left;
+  background-color: #2a2730;
+}
+.bs-docs-footer a {
+  color: #fff;
+}
+.bs-docs-footer-links {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.bs-docs-footer-links li {
+  display: inline-block;
+}
+.bs-docs-footer-links li + li {
+  margin-left: 15px;
+} 
+
+/* 不小于1200px时 */
+@media(min-width:1200px){
+    .container{
+        width: 1020px;
+        padding: 0;
+    }
+}
+/* 响应式布局 iPad768px*/
+
+@media (max-width: 768px) {
+    .box{
+    }
+    .navbar-brand {
+        padding: 4px 20px 0 20px;
+    }
+    .navbar-brand img {
+        margin: 0 auto;
+    }
+    .jumbotron {
+        height: 350px;
+    }
+    .yy p,
+    .mt .mtdw,
+    .px .pxwyh {
+        line-height: 2;
+        padding: 0 .8em;
+        text-indent: 2em;
+    }
+    .zt,
+    .zb {
+        margin: 40px auto 0;
+        height: 200px;
+    }
+    .zc p.zc_pic >img {
+        width: 100%;
+    }
+
+    /*图片列表*/
+    .wooks li{
+        margin: 10px 40px;
+    }
+
+    /*footer*/
+    .bs-docs-footer{
+        text-align: center;
+    }
+    .bs-docs-footer p {
+        margin-bottom: 0;
+    }
+}
+
+
+/* iPhone6 iPhone6Plus */
+
+@media (max-width: 414px) {
+    .jumbotron {
+        height: 195px;
+    }
+    .zt .bt .bt_p,
+    .zb p.hks {
+        font-size: 20px;
+        color: #222;
+        line-height: 2;
+    }
+    .zc p.zcdw {
+        font-size: 16px;
+    }
+    .zt,
+    .zb {
+        margin: 30px auto 0;
+        height: 180px;
+    }
+    .zc {
+        height: 200px;
+    }
+    .row h1 > img {
+        -webkit-transform: scale(.8);
+        transform: scale(.8);
+    }
+    .mt {
+        height: 400px;
+    }
+    .act-time,
+    .act-time>.col-md-4{
+        margin: 0 auto;
+    }
+    /*图片列表*/
+    .wooks li{
+        margin: 10px 0;
+    }
+}
+
+
+/* iPhone5及以下尺寸 */
+
+@media (max-width: 320px) {
+    .jumbotron {
+        height: 175px;
+    }
+    .zt .bt .bt_p {
+        font-size: 1.3em;
+        color: #000;
+        line-height: 2;
+    }
+    .zt {
+        margin: 20px auto 0;
+        height: 150px;
+    }
+    .row h1 > img {
+        margin-left: -30px;
+        -webkit-transform: scale(.7);
+        transform: scale(.7);
+    }
+    .act-time{
+        margin: 0;
+    }
+    .act-time >.col-md-4{
+        margin: 0;
+        -webkit-transform: scale(.9);
+        transform: scale(.9);
+        transform-origin:left; 
+    }
+    
+    /*footer*/
+    .bs-docs-footer-links li + li {
+        padding: 0 3px;
+        margin:0;
+    } 
+}
