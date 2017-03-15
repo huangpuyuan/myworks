@@ -31,6 +31,7 @@ p > span {
 
 .navbar-brand {
     padding-left: 180px;
+
 }
 
 .navbar-brand img {
@@ -41,7 +42,7 @@ p > span {
 /*巨幕*/
 
 .jumbotron {
-    height: 540px;
+    height: 440px;
     margin: 0 auto;
     background: url(../images/top.jpg) no-repeat center;
     background-size: cover;
@@ -54,6 +55,7 @@ p > span {
     height: 90px;
     margin: 0 auto;
     background: url(../images/navigation.png) no-repeat left;
+    background-size: contain;
 }
 
 .navigation ul {
@@ -71,7 +73,7 @@ p > span {
 
 .navigation ul li a {
     font-size: 24px;
-    line-height: 90px;
+    line-height: 100px;
     padding: 0 40px;
     font-weight: bold;
 }
@@ -99,7 +101,6 @@ p > span {
     padding: 0 3.75em;
     text-indent: 2em;
 }
-
 .yy {
     margin: 65px auto 0;
 }
@@ -180,7 +181,7 @@ p > span {
 }
 
 .px {
-    height: 300px;
+    height: 200px;
     margin: 65px auto 0;
 }
 
@@ -246,9 +247,7 @@ h2{
 .wooks li{
     list-style:none;
     display: inline-block; 
-    width:230px;
     margin:10px 10px auto;
-    height:250px;
 }
 .wooks li a{
     text-decoration:  none;
@@ -266,6 +265,7 @@ h2{
     color:#444;
 }
 
+/* 滑动条效果 */
 
 /*
  * Footer
@@ -274,8 +274,8 @@ h2{
  */
 
 .bs-docs-footer {
-  padding: 20px 0 5px;
-  margin-top: 100px;
+  padding: 10px 0 5px;
+  margin-top: 50px;
   color: #99979c;
   text-align: left;
   background-color: #2a2730;
@@ -285,7 +285,7 @@ h2{
 }
 .bs-docs-footer-links {
   padding-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .bs-docs-footer-links li {
   display: inline-block;
@@ -293,6 +293,16 @@ h2{
 .bs-docs-footer-links li + li {
   margin-left: 15px;
 } 
+
+.navbar-nav{
+    margin:0px !important;
+}
+
+.navbar-nav>li>a{
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
 
 /* 不小于1200px时 */
 @media(min-width:1200px){
@@ -304,16 +314,26 @@ h2{
 /* 响应式布局 iPad768px*/
 
 @media (max-width: 768px) {
-    .box{
+    .container-fluid{
+        height: 40px;
     }
     .navbar-brand {
-        padding: 4px 20px 0 20px;
+        height: 40px;
+        width: 60px;
+        padding: 4px 0 0;
+    }
+    .nav-list_1 > li{
+        display: inline-block;
     }
     .navbar-brand img {
         margin: 0 auto;
+        -webkit-clip-path: inset(0px 63px 0px 0px);
+        clip-path: inset(0px 63px 0px 0px);
     }
+
     .jumbotron {
-        height: 350px;
+        background-image: url(../images/mobile.jpg);
+        height: 400px;
     }
     .yy p,
     .mt .mtdw,
@@ -350,7 +370,7 @@ h2{
 
 @media (max-width: 414px) {
     .jumbotron {
-        height: 195px;
+        height: 215px;
     }
     .zt .bt .bt_p,
     .zb p.hks {
@@ -380,10 +400,33 @@ h2{
     .act-time>.col-md-4{
         margin: 0 auto;
     }
-    /*图片列表*/
+    /* 作品及图片列表 */
     .wooks li{
-        margin: 10px 0;
+        position: relative;
+        width: 100%;
+        margin: 10px auto;
     }
+    .zp h3{
+        margin:.5em 0;
+        line-height: 1;
+    }
+    .zp > img{
+        width: 100%;
+    }
+    .zp-details{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.5);
+        width: 100%; 
+    }
+    .zp-details > h3,
+    .zp-details > p{
+        color: #fff;
+        display: inline-block;
+        padding-left: 20px;
+    }
+
 }
 
 
@@ -391,7 +434,7 @@ h2{
 
 @media (max-width: 320px) {
     .jumbotron {
-        height: 175px;
+        height: 185px;
     }
     .zt .bt .bt_p {
         font-size: 1.3em;
