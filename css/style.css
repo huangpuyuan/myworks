@@ -30,10 +30,9 @@ p > span {
 }
 
 .navbar-brand {
-    padding-left: 180px;
+    padding-left: 80px;
 
-}
-
+    }
 .navbar-brand img {
     margin: -8px auto;
 }
@@ -310,25 +309,26 @@ h2{
         width: 1020px;
         padding: 0;
     }
+    .navbar-brand {
+    padding-left: 200px;
+
+    }
+    .navbar-right{
+    padding-right: 200px;
+}
 }
 /* 响应式布局 iPad768px*/
 
 @media (max-width: 768px) {
-    .container-fluid{
-        height: 40px;
+    .navbar-brand{
+        padding-left: 20px;
+        padding-top: 5px;
     }
-    .navbar-brand {
-        height: 40px;
-        width: 60px;
-        padding: 4px 0 0;
-    }
-    .nav-list_1 > li{
+    ul.nav-list_item > li{
         display: inline-block;
     }
     .navbar-brand img {
-        margin: 0 auto;
-        -webkit-clip-path: inset(0px 63px 0px 0px);
-        clip-path: inset(0px 63px 0px 0px);
+        margin: 3px auto;
     }
 
     .jumbotron {
@@ -369,6 +369,23 @@ h2{
 /* iPhone6 iPhone6Plus */
 
 @media (max-width: 414px) {
+
+
+    .container-fluid{
+        height: 40px;
+    }
+    .navbar-brand {
+        height: 40px;
+        width: 50px;
+        padding: 4px 0 0;
+    }
+    ul.nav-list_item{
+        width: 375px;
+    }
+     .navbar-brand img{
+        -webkit-clip-path: inset(0px 63px 0px 0px);
+        clip-path: inset(0px 63px 0px 0px);
+     }
     .jumbotron {
         height: 215px;
     }
@@ -433,6 +450,15 @@ h2{
 /* iPhone5及以下尺寸 */
 
 @media (max-width: 320px) {
+    .navbar-brand{
+        margin-left: -10px;
+        width: 40px;
+    }
+
+    ul.nav-list_item{
+        width: 320px;
+    }
+
     .jumbotron {
         height: 185px;
     }
