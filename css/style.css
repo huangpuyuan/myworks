@@ -284,14 +284,18 @@ h2 {
 
 .demo-image {
     display: inline-block;
-    width: 800px;
+    width: 100%;
     height: 500px;
     margin-right: 8px;
     margin-bottom: 16px;
     margin-left: 8px;
+    border: 10px solid #fff;
+    border-radius: 10px;
     cursor: url('../images/plus_cursor.png') 25 25, auto;
-    background-position: 50% 50%;
-    background-size: cover;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .demo-image.first {
@@ -303,7 +307,7 @@ h2 {
 }
 
 .jianjie {
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 
 .jianjie .zz img {
@@ -331,11 +335,15 @@ h2 {
 /* Footer */
 
 .bs-docs-footer {
-    margin-top: 50px;
+    margin-top: 150px;
     padding: 10px 0 5px;
     text-align: left;
     color: #99979c;
     background-color: #2a2730;
+}
+
+.bs-docs-footer{
+    font-size: 15px;
 }
 
 .navbar-nav {
@@ -361,6 +369,10 @@ h2 {
     .navbar-right {
         padding-right: 170px;
     }
+    .details_heading{
+        background:transparent;
+        color: #222; 
+    }
 }
 
 
@@ -385,7 +397,7 @@ h2 {
     .mt .mtdw,
     .px .pxwyh {
         line-height: 2;
-        padding: 0 8px;
+        padding: 0 6px;
         text-indent: 2em;
     }
     .zt .bt .bt_p {
@@ -395,10 +407,16 @@ h2 {
     .zc p.zcdw {
         font-size: 20px;
     }
+    .yy,
+    .zc,
+    .mt {
+        margin-top: 40px;
+    }
+
     .zt,
     .zb {
-        height: 200px;
-        margin: 40px auto 0;
+        height: 220px;
+        margin-top: 40px;
     }
     .zc p.zc_pic > img {
         width: 100%;
@@ -413,17 +431,17 @@ h2 {
         margin: 0;
         margin-bottom: 50px;
     }
-    .demos {
+
+    .demos,
+    .jianjie {
         margin-bottom: 0;
     }
-    .jianjie {
-        margin-bottom: 100px;
-    }
+
     /*footer*/
+    
     .bs-docs-footer p {
         margin-bottom: 0;
-        padding: 0 20px;
-        text-align: center;
+        padding: 0;
     }
 }
 
@@ -446,13 +464,19 @@ h2 {
     .navbar-brand img {
         -webkit-clip-path: inset(0px 63px 0px 0px);
         clip-path: inset(0px 63px 0px 0px);
+        -webkit-transform:scale(.9);
+        transform:scale(.9);
     }
     .jumbotron {
-        height: 215px;
+        height: 230px;
     }
     /*row*/
     .container > .row{
         padding: 0 2px;
+    }
+
+    .yy{
+        margin-top: 10px;
     }
 
     .zt .bt .bt_p,
@@ -464,13 +488,22 @@ h2 {
     .zc p.zcdw {
         font-size: 16px;
     }
-    .zt,
+
+    .zc{
+        height: 260px;
+    }
+
+    .zc,
+    .mt {
+        margin-top: 30px;
+    }
+    .zt{
+        height: 155px;
+        margin-top: 30px;
+    }
     .zb {
         height: 180px;
-        margin: 30px auto 0;
-    }
-    .zc {
-        height: 200px;
+        margin-top: 30px;
     }
     .row h1 > img {
         width: 100%;
@@ -530,7 +563,7 @@ h2 {
         width: 320px;
     }
     .jumbotron {
-        height: 185px;
+        height: 195px;
     }
 
     .zc p.zcdw {
@@ -551,4 +584,6 @@ h2 {
         transform: scale(.9);
         transform-origin: left;
     }
+
+
 }
