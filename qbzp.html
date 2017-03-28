@@ -102,13 +102,37 @@
         "title": "春树秋香图",
         "author": "唐伯虎",
         "link": "detail.html",
-        "imgSrc": "images/zp1.jpg"
+        "imgSrc": "images/zp2.jpg"
     }, {
         "id": "2",
         "title": "春树秋香图",
         "author": "唐伯虎",
         "link": "detail.html",
         "imgSrc": "images/zp2.jpg"
+    }, {
+        "id": "3",
+        "title": "春树秋香图",
+        "author": "唐伯虎",
+        "link": "detail.html",
+        "imgSrc": "images/zp2.jpg"
+    }, {
+        "id": "4",
+        "title": "春树秋香图",
+        "author": "唐伯虎",
+        "link": "detail.html",
+        "imgSrc": "images/zp2.jpg"
+    }, {
+        "id": "1",
+        "title": "春树秋香图",
+        "author": "唐伯虎",
+        "link": "detail.html",
+        "imgSrc": "images/zp3.jpg"
+    }, {
+        "id": "2",
+        "title": "春树秋香图",
+        "author": "唐伯虎",
+        "link": "detail.html",
+        "imgSrc": "images/zp3.jpg"
     }, {
         "id": "3",
         "title": "春树秋香图",
@@ -121,18 +145,6 @@
         "author": "唐伯虎",
         "link": "detail.html",
         "imgSrc": "images/zp4.jpg"
-    }, {
-        "id": "1",
-        "title": "春树秋香图",
-        "author": "唐伯虎",
-        "link": "detail.html",
-        "imgSrc": "images/zp1.jpg"
-    }, {
-        "id": "2",
-        "title": "春树秋香图",
-        "author": "唐伯虎",
-        "link": "detail.html",
-        "imgSrc": "images/zp2.jpg"
     }, {
         "id": "3",
         "title": "春树秋香图",
@@ -151,53 +163,72 @@
         len = wook.length,
         $pageList = $('.pagination > li'),
         count = 8, //每页数量
-        pages = Math.ceil(len / count) //页数
+        pages = Math.ceil(len / count), //页数
         index = 1;
 
     function pagination() {
         for (var i = 1; i <= pages; i++) {
             var pagination_tpl = '<li class="' + ((i == 1) ? 'active' : '') + '" data-id="' + i + '">' +
                 '<a href="javascript:;" >' + i + '</a></li>';
+
             var $node = $pageList.last().before(pagination_tpl); //最后一个节点
+
             $node.prev().on('click', function() {
                 $(this).siblings().removeClass('active');
+                var idx = $(this).addClass('active').attr('data-id');
+                index = idx;
+                btnStyleDisabled();
                 hideAllWooks();
-                $(this).addClass('active');
-                var idx = $(this).attr('data-id');
                 showWooks(idx);
             });
 
         };
 
+        //下一页
         $pageList.first().on('click', function() {
-            if(index == 1){return;}
-            var idx = $(this).siblings('.active').removeClass('active').prev().addClass('active').attr('data-id');
-            if (idx == 1) {
-                $(this).addClass('disabled');
-            } else {
-                $(this).removeClass('disabled')
-            }
+            if (index <= 1) return;
+            var idx = $(this).siblings('.active').removeClass('active')
+                .prev().addClass('active').attr('data-id');
+            index = idx;
+            btnStyleDisabled();
             hideAllWooks();
             showWooks(idx);
         });
-
+        //上一页
         $pageList.last().on('click', function() {
-            if(index == pages){ $(this).addClass('disabled'); return;}
-            var idx = $(this).siblings('.active').removeClass('active').next().addClass('active').attr('data-id');
-            index = idx;           
+            if (index >= pages) return;
+            var idx = $(this).siblings('.active').removeClass('active')
+                .next().addClass('active').attr('data-id');
+            index = idx;
+            btnStyleDisabled();
             hideAllWooks();
             showWooks(idx);
         });
 
     };
 
+    function btnStyleDisabled() {
+        if (index <= 1) {
+            $pageList.first().addClass('disabled');
+        } else {
+            $pageList.first().removeClass('disabled');
+        };
+
+        if (index >= pages) {
+            $pageList.last().addClass('disabled');
+        } else {
+            $pageList.last().removeClass('disabled');
+        };
+
+    };
+
     function hideAllWooks() {
         $wooks.find('li').hide();
-    }
+    };
 
     function showWooks(idx) {
         $wooks.find('li').slice((idx - 1) * count, idx * count).show();
-    }
+    };
 
 
     $.each(wook, function(idx, value) {
