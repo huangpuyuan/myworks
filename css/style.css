@@ -151,7 +151,7 @@ p > span {
 /* 支持单位 */
 
 .zc {
-    height: 400px;
+    height: 130px;
     margin: 65px auto 0;
 }
 
@@ -489,9 +489,6 @@ h2 {
         font-size: 16px;
     }
 
-    .zc{
-        height: 260px;
-    }
 
     .zc,
     .mt {
