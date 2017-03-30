@@ -146,11 +146,11 @@ p > span {
     font-size: 24px;
     text-align: center;
     color: #222;
-    margin:0;
+    margin: 0;
     padding: 0 100px;
 }
 
-.zb p.hks:first-of-type{
+.zb p.hks:first-of-type {
     padding-top: 15px;
 }
 
@@ -493,13 +493,14 @@ h2 {
     .zt .bt .bt_p,
     .zb p.hks {
         padding: 0;
-        font-size: 18px;
+        font-size: 17px;
         color: #222;
     }
     .zc p.zcdw {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.5;
         padding: 0;
+        color: #222;
     }
     .zc,
     .mt {
@@ -572,8 +573,10 @@ h2 {
     .jumbotron {
         height: 195px;
     }
-    .zc p.zcdw {
-        font-size: 15px;
+    .row h1 > img {
+        width: 100%;
+        -webkit-transform: scale(.75);
+        transform: scale(.75);
     }
     .zt {
         height: 150px;
