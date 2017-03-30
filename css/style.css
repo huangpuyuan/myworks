@@ -116,9 +116,10 @@ p > span {
 }
 
 .zt {
-    height: 300px;
+    height: 230px;
     margin: 65px auto 0;
     background: url(../images/zt_bg.png) no-repeat center;
+    background-size: contain;
 }
 
 .zt .bt {
@@ -126,10 +127,11 @@ p > span {
 }
 
 .zt .bt .bt_p {
-    font-size: 30px;
-    line-height: 2;
+    font-size: 24px;
+    line-height: 2.5;
     text-align: center;
     color: #000;
+    padding: 15px 100px;
 }
 
 
@@ -137,29 +139,34 @@ p > span {
 
 .zb {
     height: 200px;
-    margin: 65px auto 0;
+    margin: 35px auto 0;
 }
 
 .zb p.hks {
     font-size: 24px;
-    line-height: 45px;
     text-align: center;
     color: #222;
+    margin:0;
+    padding: 0 100px;
+}
+
+.zb p.hks:first-of-type{
+    padding-top: 15px;
 }
 
 
 /* 支持单位 */
 
 .zc {
-    height: 130px;
+    height: 200px;
     margin: 65px auto 0;
 }
 
 .zc p.zcdw {
     font-size: 24px;
-    line-height: 30px;
     margin-bottom: 30px;
     color: #222;
+    padding: 15px 100px;
 }
 
 
@@ -184,7 +191,7 @@ h2 {
     font-size: 18px;
     font-weight: bold;
     line-height: 24px;
-    width: 95px;
+    width: 92px;
     margin-bottom: 20px;
     padding: 5px 5px 5px 10px;
     color: #fff;
@@ -342,7 +349,7 @@ h2 {
     background-color: #2a2730;
 }
 
-.bs-docs-footer{
+.bs-docs-footer {
     font-size: 15px;
 }
 
@@ -369,9 +376,12 @@ h2 {
     .navbar-right {
         padding-right: 170px;
     }
-    .details_heading{
-        background:transparent;
-        color: #222; 
+    .details_heading {
+        background: transparent;
+        color: #222;
+    }
+    .zt {
+        background-size: cover;
     }
 }
 
@@ -401,7 +411,8 @@ h2 {
         text-indent: 2em;
     }
     .zt .bt .bt_p {
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 1.7;
     }
     .zb p.hks,
     .zc p.zcdw {
@@ -412,7 +423,6 @@ h2 {
     .mt {
         margin-top: 40px;
     }
-
     .zt,
     .zb {
         height: 220px;
@@ -431,14 +441,11 @@ h2 {
         margin: 0;
         margin-bottom: 50px;
     }
-
     .demos,
     .jianjie {
         margin-bottom: 0;
     }
-
     /*footer*/
-    
     .bs-docs-footer p {
         margin-bottom: 0;
         padding: 0;
@@ -449,6 +456,9 @@ h2 {
 /* iPhone6 iPhone6Plus */
 
 @media (max-width: 425px) {
+    h1 {
+        margin-bottom: 10px;
+    }
     /*导航条*/
     .container-fluid {
         height: 40px;
@@ -464,51 +474,51 @@ h2 {
     .navbar-brand img {
         -webkit-clip-path: inset(0px 63px 0px 0px);
         clip-path: inset(0px 63px 0px 0px);
-        -webkit-transform:scale(.9);
-        transform:scale(.9);
+        -webkit-transform: scale(.9);
+        transform: scale(.9);
     }
     .jumbotron {
         height: 230px;
     }
     /*row*/
-    .container > .row{
-        padding: 0 2px;
+    .container > .row {
+        padding: 0 4px;
     }
-
-    .yy{
+    .yy {
         margin-top: 10px;
     }
-
+    .bt_p {
+        line-height: 1.7;
+    }
     .zt .bt .bt_p,
     .zb p.hks {
+        padding: 0;
         font-size: 18px;
-        line-height: 2;
         color: #222;
     }
     .zc p.zcdw {
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 1.5;
+        padding: 0;
     }
-
-
     .zc,
     .mt {
         margin-top: 30px;
     }
-    .zt{
-        height: 155px;
-        margin-top: 30px;
-    }
-    .zb {
+    .zt {
         height: 180px;
         margin-top: 30px;
     }
+    .zb {
+        height: 170px;
+        margin-top: 20px;
+    }
     .row h1 > img {
-        width: 100%;
         -webkit-transform: scale(.8);
         transform: scale(.8);
     }
     .mt {
-        height: 400px;
+        height: 260px;
     }
     .act-time,
     .act-time > .col-md-4 {
@@ -562,16 +572,13 @@ h2 {
     .jumbotron {
         height: 195px;
     }
-
     .zc p.zcdw {
         font-size: 15px;
     }
-
     .zt {
         height: 150px;
         margin: 20px auto 0;
     }
-
     .act-time {
         margin: 0;
     }
@@ -581,6 +588,4 @@ h2 {
         transform: scale(.9);
         transform-origin: left;
     }
-
-
 }
