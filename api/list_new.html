@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    a{
+    	text-decoration: none!important;
+    	cursor: pointer;
+    }
+
+    .thumbnail {
+        height: 400px;
+        text-align: center;
+    }
+
+    .thumbnail > p{
+    	display: inline-block;
+    	width: 100%;
+    	height: 300px;
+    	line-height: 300px;
+    }
+
+    .thumbnail > p img {        
+        max-height: 300px;
+        max-width: 100%;
+        vertical-align: middle;	
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" ng-app="myApp" ng-controller="myCtrl">
+       <h2>作品列表页</h2>
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="item in list">
+                <a class="thumbnail">
+                    <p><img ng-src="{{'http://zt.hkstv.tv/'+item.picture}}"></p>
+                    <div class="caption">
+                        <h3>{{item.title}}<small ng-bind="' 作者:'+ item.author"></small></h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script>
+
+    angular.module('myApp', []).controller('myCtrl', ['$scope', '$http', function($scope, $http) {
+        $http.get('list.php').then(function(resp) {
+            $scope.list = resp.data.data;
+            console.log($scope.list);
+        }, function(err) {
+
+        });
+    }]);
+    </script>
+</body>
+
+</html>
