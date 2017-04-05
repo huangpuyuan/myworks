@@ -3,88 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,">
     <title>列表页</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-    a {
-        text-decoration: none!important;
-        cursor: pointer;
-    }
-    
-    .thumbnail {
-        height: 400px;
-        text-align: center;
-    }
-    
-    .thumbnail > p {
-        display: inline-block;
-        width: 100%;
-        height: 300px;
-        line-height: 300px;
-    }
-    
-    .thumbnail > p img {
-        max-height: 300px;
-        max-width: 100%;
-        vertical-align: middle;
-    }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body ng-app="myApp">
     <div ui-view></div>
     <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
     <script src="https://cdn.bootcss.com/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-    <script>
-    "use strict";
-
-    var myApp = angular.module('myApp', ['ui.router']);
-
-    myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('main', {
-            url: '/main',
-            templateUrl: './view/main.html',
-            controller: 'myCtrl'
-        }).state('detail', {
-            url: '/detail/:id',
-            templateUrl: './view/detail.html',
-            controller: 'detailCtrl'
-        });
-
-        $urlRouterProvider.otherwise('main');
-    }]);
-
-
-    myApp.controller('myCtrl', ['$scope', '$http', '$state', '$q', function($scope, $http, $state, $q) {
-        $http.get('list.php').then(function(resp) {
-            $scope.list = resp.data.data;
-            console.log($scope.list);
-        }, function(err) {
-
-        });
-
-        // $scope.tClick = function(id, data) {
-        //     console.log(id);
-        //     $state.go('detail');
-        // }
-
-    }]);
-
-    myApp.controller('detailCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-        $http.get('list.php?id=' + $state.params.id).then(function(resp) {
-            var id = $state.params.id; 
-            $scope.list = resp.data.data;
-            $scope.detail = {};
-            console.log($scope.list);
-            angular.forEach($scope.list,function(data,index,array){
-                if(data.id == id ){
-                        $scope.detail = data;
-                    return $scope.detail;
-                }
-            });
-        })
-    }]);
-    </script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

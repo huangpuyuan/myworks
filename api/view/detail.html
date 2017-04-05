@@ -1,13 +1,16 @@
 <div class="container">
+    <h2>详情页</h2>
+    <div class="thumbnail">
+        <p><img ng-src="{{'http://zt.hkstv.tv/'+detail.picture}}"></p>
+        <div class="caption">
+            <h3 ng-bind="detail.title"></h3>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-sm-6 col-md-4" ">
-        	<h2>详情页</h2>	
-            <a class="thumbnail">
-                <p><img ng-src="{{'http://zt.hkstv.tv/'+detail.picture}}"></p>
-                <div class="caption">
-                    <h3>{{detail.title}}<small ng-bind="' 作者:'+ detail.author"></small></h3>
-                </div>
-            </a>
+        <div class="col-md-4"><img ng-src="{{'http://zt.hkstv.tv/'+detail.filename}}"></div>
+        <div class="col-md-8">
+            <h3 ng-bind="'作者简介： '+ detail.author"></h3>
+            <div class="text-left" style="text-indent:2em;" ng-bind-html="detail.text | to_trusted"></div>
         </div>
     </div>
 </div>
