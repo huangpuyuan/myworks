@@ -1,0 +1,20 @@
+{
+  "name": "cms",
+  "description": "cms\u001b[D\u001b[D\u001b[Dsystem of cms",
+  "main": "index.js",
+  "authors": [
+    "huangpuyuan"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "cms"
+  ],
+  "homepage": "https://github.com/huangpuyuan/myworks",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^0.4.2",
+    "ng-table": "^4.0.0",
+    "angular-validation": "^1.4.3",
+    "angular-chat": "^2.0.0"
+  }
+}

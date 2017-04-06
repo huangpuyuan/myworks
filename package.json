@@ -1,0 +1,22 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "cms\u001b[D\u001b[D\u001b[Dsystem of cms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangpuyuan/myworks.git"
+  },
+  "keywords": [
+    "cms"
+  ],
+  "author": "huangpuyuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huangpuyuan/myworks/issues"
+  },
+  "homepage": "https://github.com/huangpuyuan/myworks#readme"
+}

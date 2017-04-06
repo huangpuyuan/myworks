@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
+    
+    <script src="lib/jquery/jquery-1.11.0.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/angular-validation/angular-validation.js"></script>
+    <script src="lib/angular-validation/angular-validation-rule.js"></script>
+    <script src="app.js"></script>
+    <script src="modules/users/users.js"></script>
+</head>
+
+<body>
+    <div ng-include="'modules/common/loginHeader.html'" ng-show="!userInfo"></div>
+    <div ng-include="'modules/common/userHeader.html'" ng-show="userInfo"></div>
+    <div class="main">
+        <div class="main-innner">
+            <div class="container" ui-view>
+            </div>
+        </div>
+    </div>
+    <div ng-include="'modules/common/footer.html'"></div>
+</body>
+
+</html>
