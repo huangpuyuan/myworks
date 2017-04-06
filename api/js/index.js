@@ -38,7 +38,7 @@
         $http.get('data.php?id=' + $state.params.id).then(function(resp) {
             var urlId = $state.params.id;
             $scope.detail = resp.data.data;
-            console.log($scope.detail); 
+            console.log($scope.detail);
             //$scope.detail = {};
             // angular.forEach($scope.list, function(data) {
             //     if (data.id == urlId) {
@@ -46,13 +46,20 @@
             //         return $scope.detail;
             //     }
             // });
-        })
+
+            $scope.intense();
+        });
+
+        $scope.intense = function(){
+            var elements = document.querySelectorAll('.demo-image');
+            Intense(elements);
+        }
+
     }]).filter('to_trusted', ['$sce', function($sce) {
         return function(text) {
             return $sce.trustAsHtml(text);
         };
     }]);
-
 
 
 })();

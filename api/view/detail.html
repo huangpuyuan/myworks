@@ -1,5 +1,5 @@
-<div class="container">
-    <h2>详情页</h2>
+<!-- <div class="container">
+    <h3>详情页</h3>
     <div class="thumbnail">
         <p><img ng-src="{{'http://zt.hkstv.tv/'+detail.picture}}"></p>
         <div class="caption">
@@ -11,6 +11,21 @@
         <div class="col-md-8">
             <h3 ng-bind="'作者简介： '+ detail.author"></h3>
             <div class="text-left" style="text-indent:2em;" ng-bind-html="detail.text | to_trusted"></div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <h2 class="details_heading text-center" ng-bind="detail.title+' 作者：'+ detail.author" ></h2>
+    <section class="demos" >
+        <div class="demo-image first" style="background-image: url({{'http://zt.hkstv.tv/'+detail.picture}});" data-image="{{'http://zt.hkstv.tv/'+detail.picture}}" data-title="{{detail.title}}" data-caption="{{detail.author}}"></div>
+    </section>
+    <div class="row jianjie">
+        <div class="col-md-3 col-sm-5 zz text-left">
+            <img ng-src="{{'http://zt.hkstv.tv/'+detail.filename}}" />
+        </div>
+        <div class="col-md-9 col-sm-7">
+            <h3 ng-bind="detail.author"></h3>
+            <div style="text-indent:2em;" ng-bind-html="detail.text | to_trusted"></div>
         </div>
     </div>
 </div>
