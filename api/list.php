@@ -8,7 +8,7 @@ $data = $file ->cacheData('index_cron_cache');
 if($data){
 	return Response::show(200,'数据获取成功',$data);
 }else{
-	return Response::show(400,'数据获取失败',$data);	
+	return Response::show(400,'数据获取失败');	
 }
 
 
@@ -60,5 +60,5 @@ if(!$items = $cache->cacheData('index_hksh_cache'.$page.'-'.$pageSize)){
 if($items){
 	return Response::show(200,'数据获取成功',$items);
 }else{
-	return Response::show(400,'数据获取失败',$items);	
+	return Response::show(400,'数据获取失败');	
 }

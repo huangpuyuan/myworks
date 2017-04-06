@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>列表页</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
-<body>
+<body ng-app="myApp">
+    <div ui-view></div>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
-
 </html>
