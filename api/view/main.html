@@ -1,7 +1,7 @@
 <div class="container">
     <h2>全部作品</h2>
     <div class="row wooks">
-        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in list">
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in items">
             <a class="thumbnail" ui-sref="detail({id:item.id})">
                 <p><img ng-src="{{'http://zt.hkstv.tv/'+item.picture}}"></p>
             </a>
@@ -11,4 +11,36 @@
             </div>
         </div>
     </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination pull-right">
+            <li class="hidden-xs" ng-class="{disabled: isFirstDisabled(page)}">
+                <a ng-click="firstPage();" aria-label="firstPage">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li ng-class="{disabled: isFirstDisabled(page)}">
+                <a ng-click="Previous();" aria-label="Previous">
+                    <span aria-hidden="true">&lt;</span>
+                </a>
+            </li>
+            <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}">
+                <a ng-click="selectPage(page)">{{ page }}</a>
+            </li>
+            <li ng-class="{disabled: isLastDisabled(page)}">
+                <a ng-click="Next();" aria-label="Next">
+                    <span aria-hidden="true">&gt;</span>
+                </a>
+            </li>
+            <li class="hidden-xs" ng-class="{disabled: isLastDisabled(page)}">
+                <a ng-click="lastPage();" aria-label="lastPage">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li >
+                <span ng-bind="'共'+ pages +'页'"></span>
+                <span class="hidden-xs" style="height:36px;line-height: 1;">到&nbsp;<input style="width:40px;height:24px;" id="page" name="page" type="text" ng-model="inputPage" />页<button ng-click="goto(inputPage);" style="height:26px;">GO</button>
+                </span>
+            </li>
+        </ul>
+    </nav>
 </div>
