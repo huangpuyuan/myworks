@@ -36,9 +36,13 @@
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
-            <li >
+            <li>
                 <span ng-bind="'共'+ pages +'页'"></span>
-                <span class="hidden-xs" style="height:36px;line-height: 1;">到&nbsp;<input style="width:40px;height:24px;" id="page" name="page" type="text" ng-model="inputPage" />页<button ng-click="goto(inputPage);" style="height:26px;">GO</button>
+                <span class="hidden-xs" style="height:36px;line-height: 1;">
+                    <span>到&nbsp;</span>
+                <input style="width:40px;height:24px;" id="page" name="page" type="text" ng-model="inputPage" onkeyup="this.value=this.value.replace(/\D/g,'')" ng-keyup="enterEvent($event)" />
+                <span>页</span>
+                <button ng-click="goto(inputPage);" style="height:24px;">GO</button>
                 </span>
             </li>
         </ul>

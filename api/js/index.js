@@ -21,7 +21,7 @@
 
     myApp.controller('myCtrl', ['$scope', '$http', '$state', '$q', function($scope, $http, $state, $q) {
         //每页数据量
-        $scope.pageSize = 1;
+        $scope.pageSize = 4;
         //当前页码 默认为首页
         $scope.selPage = 1;
 
@@ -78,11 +78,20 @@
                 console.log("选择的页：" + page);
             };
 
+            //监听回车事件
+            $scope.enterEvent = function(e) {
+                var keycode = window.event ? e.keyCode : e.which;
+                if (keycode == 13) {
+                    $scope.goto($scope.inputPage);
+                }
+            };
 
             $scope.goto = function(inputPage) {
                 if (!isNaN(inputPage)) {
                     console.log('跳转至', inputPage);
                     $scope.selectPage(parseInt(inputPage));
+                } else {
+                    return;
                 }
             };
 
@@ -135,7 +144,18 @@
             var urlId = $state.params.id;
             $scope.detail = resp.data.data;
             $scope.intense();
+
+            $scope.prevWork = function() {
+                $state.go('detail', { id: parseInt(urlId) + 1 });
+            };
+
+            $scope.nextWork = function() {
+                if (parseInt(urlId) <= 1) return;
+                $state.go('detail', { id: parseInt(urlId) - 1 });
+            };
         });
+
+
 
         $scope.intense = function() {
             var elements = document.querySelectorAll('.demo-image');

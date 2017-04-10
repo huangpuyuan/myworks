@@ -1,5 +1,15 @@
 <div class="container">
     <h2 class="details_heading text-center" ng-bind="detail.title+' 作者：'+ detail.author"></h2>
+    <nav>
+        <ul class="pager">
+            <li class="previous" ng-class="{disabled: isFirstDisabled(page)}">
+                <a ng-click="prevWork();"><span aria-hidden="true">&larr;</span>上一幅</a>
+            </li>
+            <li class="next" ng-class="{disabled: isLastDisabled(page)}">
+                <a ng-click="nextWork();">下一幅<span aria-hidden="true">&rarr;</span></a>
+            </li>
+        </ul>
+    </nav>
     <section class="demos">
         <div class="demo-image first" style="background-image: url({{'http://zt.hkstv.tv/'+detail.picture}});" data-image="{{'http://zt.hkstv.tv/'+detail.picture}}" data-title="{{detail.title}}" data-caption="{{detail.author}}"></div>
     </section>
