@@ -111,9 +111,27 @@ p > span {
 
 /*活动主题*/
 
+.zt .bt {
+    margin: 0 auto;
+}
+
 .zt {
+    height: 230px;
+    margin: 65px auto 0;
     background: url(../images/zt_bg.png) no-repeat center;
     background-size: contain;
+}
+
+.zt .bt {
+    margin: 0 auto;
+}
+
+.zt .bt .bt_p {
+    font-size: 24px;
+    line-height: 2.5;
+    text-align: center;
+    color: #000;
+    padding: 15px 100px;
 }
 
 
@@ -127,7 +145,6 @@ p > span {
 .zb p.hks {
     font-size: 24px;
     text-align: center;
-    vertical-align: middle;
     color: #222;
     margin: 0;
     padding: 0 100px;
@@ -135,6 +152,21 @@ p > span {
 
 .zb p.hks:first-of-type {
     padding-top: 15px;
+}
+
+
+/* 支持单位 */
+
+.zc {
+    height: 200px;
+    margin: 65px auto 0;
+}
+
+.zc p.zcdw {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #222;
+    padding: 15px 100px;
 }
 
 
@@ -156,21 +188,15 @@ p > span {
 }
 
 h2 {
-    font-family: KaiTi, sans-serif;
     font-size: 18px;
-    line-height: 20px;
-    width: 95px;
+    font-weight: bold;
+    line-height: 24px;
+    width: 92px;
     margin-bottom: 20px;
-    padding: 5px 10px;
+    padding: 5px 5px 5px 10px;
     color: #fff;
-    border-radius: 3px;
+    border-radius: 2px;
     background: #ee4041;
-    text-align: left;
-}
-
-h2.special {
-    width: 160px;
-    padding-right: 0;
 }
 
 .act-time {
@@ -211,6 +237,7 @@ h2.special {
 .container.main > div p {
     font-size: 16px;
     line-height: 30px;
+    margin-bottom: 20px;
     color: #444;
 }
 
@@ -353,6 +380,9 @@ h2.special {
         background: transparent;
         color: #222;
     }
+    .zt {
+        background-size: cover;
+    }
 }
 
 
@@ -380,16 +410,26 @@ h2.special {
         padding: 0 6px;
         text-indent: 2em;
     }
+    .zt .bt .bt_p {
+        font-size: 20px;
+        line-height: 1.7;
+    }
+    .zb p.hks,
+    .zc p.zcdw {
+        font-size: 20px;
+    }
+    .yy,
+    .zc,
+    .mt {
+        margin-top: 40px;
+    }
+    .zt,
     .zb {
         height: 220px;
         margin-top: 40px;
     }
-    .zb p.hks {
-        font-size: 20px;
-    }
-    .yy,
-    .mt {
-        margin-top: 40px;
+    .zc p.zc_pic > img {
+        width: 100%;
     }
     /*图片列表*/
     .wooks li {
@@ -447,17 +487,32 @@ h2.special {
     .yy {
         margin-top: 10px;
     }
-    .zb {
-        height: 170px;
-        margin-top: 20px;
+    .bt_p {
+        line-height: 1.7;
     }
+    .zt .bt .bt_p,
     .zb p.hks {
         padding: 0;
         font-size: 17px;
         color: #222;
     }
+    .zc p.zcdw {
+        font-size: 17px;
+        line-height: 1.5;
+        padding: 0;
+        color: #222;
+    }
+    .zc,
     .mt {
         margin-top: 30px;
+    }
+    .zt {
+        height: 180px;
+        margin-top: 30px;
+    }
+    .zb {
+        height: 170px;
+        margin-top: 20px;
     }
     .row h1 > img {
         -webkit-transform: scale(.8);
