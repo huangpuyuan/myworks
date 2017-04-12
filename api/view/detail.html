@@ -1,5 +1,8 @@
 <div class="container">
     <h2 class="details_heading text-center" ng-bind="detail.title+' 作者：'+ detail.author"></h2>
+    <section class="demos">
+        <div class="demo-image first" style="background-image: url({{'http://zt.hkstv.tv/'+detail.picture}});" data-image="{{'http://zt.hkstv.tv/'+detail.picture}}" data-title="{{detail.title}}" data-caption="{{detail.author}}"></div>
+    </section>
     <nav>
         <ul class="pager">
             <li class="previous" ng-class="{disabled: isPrevDisabled}">
@@ -13,12 +16,9 @@
             </li>
         </ul>
     </nav>
-    <section class="demos">
-        <div class="demo-image first" style="background-image: url({{'http://zt.hkstv.tv/'+detail.picture}});" data-image="{{'http://zt.hkstv.tv/'+detail.picture}}" data-title="{{detail.title}}" data-caption="{{detail.author}}"></div>
-    </section>
     <div class="row jianjie">
-        <div class="col-md-3 col-sm-5 zz text-left">
-            <img ng-src="{{'http://zt.hkstv.tv/'+detail.filename}}" />
+        <div class="col-md-3 col-sm-5 text-center zz">
+            <img ng-src="{{'http://zt.hkstv.tv/'+detail.filename}}"  />
         </div>
         <div class="col-md-9 col-sm-7">
             <h3 ng-bind="detail.author"></h3>

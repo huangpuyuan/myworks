@@ -93,13 +93,12 @@
             $scope.enterEvent = function(e) {
                 var keycode = window.event ? e.keyCode : e.which;
                 if (keycode == 13) {
-                    $scope.goto($scope.inputPage);
+                    $scope.gotoPage($scope.inputPage);
                 };
             };
 
-            $scope.goto = function(inputPage) {
-                if (!isNaN(inputPage)) {
-                    //console.log('跳转至', inputPage);
+            $scope.gotoPage = function(inputPage) {
+                if (!isNaN(inputPage) && (inputPage)) {
                     $scope.selectPage(parseInt(inputPage));
                 }
             };
@@ -156,7 +155,8 @@
         $http.get('work.php?id=' + $state.params.id).then(function(resp) {
             if (resp.data.code >= 400) {
                 $state.go('main');
-            }
+            };
+
             $scope.urlId = $state.params.id;
             $scope.detail = resp.data.data;
             $scope.intense();
@@ -286,7 +286,7 @@
         };
     }]);
 
-    myApp.run(function($rootScope, $state, $stateParams) {
+    myApp.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -294,7 +294,7 @@
             document.body.scrollTop = document.documentElement.scrollTop = 0;
         });
 
-    });
+    }]);
 
 
 })();

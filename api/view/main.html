@@ -37,13 +37,15 @@
                 </a>
             </li>
             <li>
-                <span ng-bind="'共'+ pages +'页'"></span>
                 <span class="hidden-xs" style="height:36px;line-height: 1;">
-                    <span>到&nbsp;</span>
-                <input style="width:40px;height:24px;" id="page" name="page" type="text" ng-model="inputPage" onkeyup="this.value=this.value.replace(/\D/g,'')" ng-keyup="enterEvent($event)" />
-                <span>页</span>
-                <button ng-click="goto(inputPage);" style="height:24px;">GO</button>
+                    <span>到</span>
+                    <input style="width:40px;height:24px;" id="page" name="page" type="text" ng-model="inputPage" onkeyup="this.value=this.value.replace(/\D/g,'')" ng-keyup="enterEvent($event)" />
+                    <span>页</span>
+                <button ng-click="gotoPage(inputPage);" style="height:24px;">GO</button>
                 </span>
+            </li>
+            <li>
+                <span ng-bind="'共'+ pages +'页'"></span>
             </li>
         </ul>
     </nav>
