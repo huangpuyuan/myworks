@@ -26,8 +26,8 @@
         $scope.selPage = 1;
 
         $http.get('data.php').then(function(resp) {
+
             $scope.list = resp.data.data;
-            //console.log($scope.list);
             $scope.data = $scope.list;
 
             $scope.pages = Math.ceil($scope.data.length / $scope.pageSize);
@@ -42,7 +42,7 @@
                 $scope.items = $scope.data.slice(($scope.pageSize * ($scope.selPage - 1)), ($scope.selPage * $scope.pageSize));
             }
 
-            $scope.items = $scope.data.slice(0, $scope.pageSize);
+            //$scope.items = $scope.data.slice(0, $scope.pageSize);
 
 
             $scope.selectPage = function(page) {
@@ -90,8 +90,6 @@
                 if (!isNaN(inputPage)) {
                     console.log('跳转至', inputPage);
                     $scope.selectPage(parseInt(inputPage));
-                } else {
-                    return;
                 }
             };
 
@@ -140,20 +138,41 @@
     }]);
 
     myApp.controller('detailCtrl', ['$rootScope', '$scope', '$http', '$state', function($rootScope, $scope, $http, $state) {
+
+
         $http.get('data.php?id=' + $state.params.id).then(function(resp) {
-            var urlId = $state.params.id;
+            if (resp.data.code > 400) return;
+            $scope.urlId = $state.params.id;
             $scope.detail = resp.data.data;
             $scope.intense();
 
-            $scope.prevWork = function() {
-                $state.go('detail', { id: parseInt(urlId) + 1 });
-            };
-
-            $scope.nextWork = function() {
-                if (parseInt(urlId) <= 1) return;
-                $state.go('detail', { id: parseInt(urlId) - 1 });
-            };
         });
+
+        $scope.prevWork = function(urlId) {
+            var prevId = parseInt(urlId) - 1;
+            $http.get('data.php?id=' + prevId).then(function(resp) {
+                if (resp.data.code == 200) {
+                    $scope.urlId = prevId;
+                    $scope.detail = resp.data.data;
+                    $scope.isPrevDisabled = $scope.isNextDisabled = false;
+                } else {
+                    $scope.isPrevDisabled = true;
+                }
+            });
+        };
+
+        $scope.nextWork = function(urlId) {
+            var nextId = parseInt(urlId) + 1;
+            $http.get('data.php?id=' + nextId).then(function(resp) {
+                if (resp.data.code == 200) {
+                    $scope.urlId = nextId;
+                    $scope.detail = resp.data.data;
+                    $scope.isNextDisabled = $scope.isPrevDisabled = false;
+                } else {
+                    $scope.isNextDisabled = true;
+                }
+            });
+        };
 
 
 
