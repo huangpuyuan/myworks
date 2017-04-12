@@ -3,10 +3,13 @@
     <nav>
         <ul class="pager">
             <li class="previous" ng-class="{disabled: isPrevDisabled}">
-                <a ng-click="prevWork(urlId);"><span aria-hidden="true">&larr;</span><span ng-bind="isPrevDisabled?'没有更多了':'上一幅'"></span></a>
+                <!-- <a ng-click="prevWork(urlId);"></a> -->
+                <a ng-click="switchWork(urlId,-1);">
+                    <span aria-hidden="true">&larr;</span><span ng-bind="isPrevDisabled?'没有更多了':'上一幅'"></span></a>
             </li>
             <li class="next" ng-class="{disabled: isNextDisabled}">
-                <a ng-click="nextWork(urlId);"><span ng-bind="isNextDisabled?'没有更多了':'下一幅'"></span><span aria-hidden="true">&rarr;</span></a>
+                <!-- <a ng-click="nextWork(urlId);" ></a> -->
+                <a ng-click="switchWork(urlId);"> <span ng-bind="isNextDisabled?'没有更多了':'下一幅'"></span><span aria-hidden="true">&rarr;</span></a>
             </li>
         </ul>
     </nav>
