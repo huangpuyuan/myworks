@@ -1,5 +1,4 @@
-;
-(function() {
+;(function() {
     "use strict";
 
     angular.module('myApp', ['ui.router']);
@@ -21,17 +20,18 @@
     }]);
 
 
-    myApp.controller('myCtrl', ['$rootScope', '$scope', '$http', '$state', '$q', function($rootScope, $scope, $http, $state, $q) {
+    myApp.controller('myCtrl', ['$rootScope', '$scope', '$http', '$state', '$anchorScroll', '$location', function($rootScope, $scope, $http, $state, $anchorScroll, $location) {
 
         //每页数据量
         $scope.pageSize = 4;
         //当前页码 默认为首页
         $scope.selPage = 1;
 
-        $http.get('data.php').then(function(resp) {
+        $http.get('data/data.php').then(function(resp) {
 
             $scope.list = resp.data.data;
             $rootScope.listOfId = [];
+
             $scope.list.forEach(function(e) {
                 $rootScope.listOfId.push(parseInt(e.id));
             });
@@ -51,7 +51,7 @@
 
             $scope.setData = function() {
                 $scope.items = $scope.data.slice(($scope.pageSize * ($scope.selPage - 1)), ($scope.selPage * $scope.pageSize));
-            }
+            };
 
             //$scope.items = $scope.data.slice(0, $scope.pageSize);
 
@@ -94,7 +94,7 @@
                 var keycode = window.event ? e.keyCode : e.which;
                 if (keycode == 13) {
                     $scope.gotoPage($scope.inputPage);
-                };
+                }
             };
 
             $scope.gotoPage = function(inputPage) {
@@ -140,7 +140,10 @@
             //激活第一页
             $scope.selectPage($scope.selPage);
 
-            //console.log($scope.pageList);
+            $scope.$watch('selPage', function() {
+                $anchorScroll();
+                //document.body.scrollTop = document.documentElement.scrollTop = 0;
+            });
         }, function(err) {
 
         });
@@ -152,10 +155,10 @@
         var ids = [];
         $scope.isNextDisabled = $scope.isPrevDisabled = false;
 
-        $http.get('work.php?id=' + $state.params.id).then(function(resp) {
+        $http.get('data/work.php?id=' + $state.params.id).then(function(resp) {
             if (resp.data.code >= 400) {
                 $state.go('main');
-            };
+            }
 
             $scope.urlId = $state.params.id;
             $scope.detail = resp.data.data;
@@ -164,7 +167,7 @@
         });
 
         if (!$rootScope.listOfId) {
-            $http.get('data.php').then(function(resp) {
+            $http.get('data/data.php').then(function(resp) {
                 $rootScope.listOfId = [];
                 resp.data.data.forEach(function(e) {
                     $rootScope.listOfId.push(parseInt(e.id));
@@ -183,15 +186,20 @@
                 pages = pages || 1;
                 if (!ids) return;
                 if (!isNaN(pages)) {
-                    if (pages == 0) return;
+                    if (pages === 0) return;
                     var newId = ids[ids.indexOf(parseInt(urlId)) - pages];
                     if (newId) {
                         $state.go('detail', { id: newId });
                     } else {
-                        (pages > 0) ? $scope.isNextDisabled = true: $scope.isPrevDisabled = true;
+                        if (pages > 0) {
+                            $scope.isNextDisabled = true;
+                        } else {
+                            $scope.isPrevDisabled = true;
+                        }
+
                     }
                 }
-            }
+            };
         }, 200);
 
         /*  
@@ -275,7 +283,7 @@
         $scope.intense = function() {
             var elements = document.querySelectorAll('.demo-image');
             Intense(elements);
-        }
+        };
 
 
     }]);
@@ -286,12 +294,11 @@
         };
     }]);
 
-    myApp.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+    myApp.run(['$rootScope', '$anchorScroll', function($rootScope, $anchorScroll) {
 
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
         $rootScope.$on('$stateChangeSuccess', function() {
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            $anchorScroll();
+            // document.body.scrollTop = document.documentElement.scrollTop = 0;
         });
 
     }]);

@@ -1,6 +1,6 @@
 <?php 
-require_once('./Class/response.php');
-require_once('./Class/file.php');
+require_once('../Class/response.php');
+require_once('../Class/file.php');
 
 $file = new File();
 $data = $file ->cacheData('index_cron_cache');

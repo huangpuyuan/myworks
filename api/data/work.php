@@ -1,6 +1,6 @@
 <?php		
-	require_once './Class/response.php';
-	require_once './Class/db.php';
+	require_once '../Class/response.php';
+	require_once '../Class/db.php';
 
 	$id =isset($_GET['id'])?$_GET['id']:0;
 
